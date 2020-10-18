@@ -1,0 +1,789 @@
+/* білий #FFFFFF; */
+/* чорний #000000; */
+/* акценту #2196F3; */
+/* основний колір тексту #212121; */
+/* другорядний колір тексту #757575; */
+/* колір фону main+footer #2f303a; */
+/* другорядний колір фону сайту  #F5F4FA; */
+
+/*  outline: 2px solid red;*/
+/* background-color: blue */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  bottom: 0px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:root {
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --accent-color: #2196f3;
+  --main-text-color: #212121;
+  --secondary-text-color: #757575;
+  --main-footer-background-color: #2f303a;
+  --background-grey-color: #f5f4fa;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: var(--white-color);
+  letter-spacing: 0.03em;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+/*=====================    Студія    =====================    */
+
+/* ===================== Шапка сторінки =====================*/
+
+/*ставимо вертикальні блоки в горизонт (лінію) і центруємо її*/
+.header {
+  background-color: var(--white-color);
+  font-family: Roboto, sans-serif;
+  margin: 0 auto;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  /* Установит стили нинжней рамки */
+  border-bottom: 1px solid #ececec;
+  /*justify-content: space-between;*/
+}
+
+/*Контейнер nav*/
+/*Задаємо глобальні параметри для контейнера*/
+
+/* Навігаія сайту */
+/*ставимо вертикальні блоки в горизонт (лінію) і центруємо її*/
+.center-line {
+  display: flex;
+  align-self: center;
+}
+
+/* Лого */
+.webstudio {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.192;
+  color: var(--black-color);
+  text-decoration: none;
+  margin-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.logo {
+  color: var(--accent-color);
+}
+
+/*ставимо вертикальні блоки в горизонтальну (лінію) (наші ссилки))*/
+.nav-site {
+  display: flex;
+  align-self: center;
+}
+
+/*  ======вирівнюєм нашу навігацію разом із марджином, 
+і забираємо марджин в останнього
+.nav-site .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+нижче така сама команда (old shcool)
+*/
+/*задаєм лівий марджин для списку ссилок, крім першої (бо перша вже не міє сестринської Item)*/
+.nav-site .item + .item {
+  margin-left: 50px;
+}
+
+/*робимо мейл і тел блочним*/
+.nav-site .link {
+  display: block;
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
+}
+
+.nav-site .link-curent {
+  color: var(--accent-color);
+}
+
+/* !!!!!!        Авторизація сайту       !!!!!!!*/
+
+/*задаєм лівий марджин для списку пошти і тел, крім першої (бо перша вже не міє сестринської Item)*/
+
+/*переводим вертикальний список в горизонтальний і позиціонуємо його в лівий край*/
+.nav-auth {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-auth .auth-item + .auth-item {
+  margin-left: 50px;
+}
+
+.nav-auth a {
+  display: flex;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  align-items: center;
+}
+
+.icon-auth {
+  block-size: border-box;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  fill: var(--secondary-text-color);
+}
+
+.auth-item:hover .icon-auth {
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+.auth-item:hover .mail,
+.auth-item:hover .tel {
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.mail:focus,
+.tel:focus {
+  color: var(--accent-color);
+}
+
+.mail:focus .icon-auth,
+.tel:focus .icon-auth {
+  fill: var(--accent-color);
+}
+
+/*скриваємо заголовок*/
+.visually-hidden {
+  display: none;
+}
+
+/*скриваємо заголовок */
+
+/*.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+*/
+/*
+   виставляння розміру svg
+.mail::before {
+  display: inline-block;
+  content: url("/img/svg/envelope.svg");
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.tel::before {
+  display: inline-block;
+  content: url("/img/svg/smartphone.svg");
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+}
+*/
+
+/*=============    MAIN    ==============*/
+.main {
+  font-family: Roboto, sans-serif;
+}
+/*=============   HERO   ==============*/
+/*Секція герой */
+.section-hero {
+  background-color: var(--main-footer-background-color);
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../img/herobg/herobg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero-title {
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.364;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-top: 0px;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+/*=============   BUTTON   ==============*/
+.button {
+  /* font-family: inherit; */
+  display: inline-block;
+  border-radius: 4px;
+  padding: 10px 32px;
+  min-width: 200px;
+  text-align: center;
+  text-decoration: none;
+
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+/* Секція особливості*/
+/*=============   FEATURES   ==============*/
+/*переводим вертикальний список в горизонтальний */
+
+.section-features {
+  padding-top: 94px;
+  padding-bottom: 79px;
+  background-color: var(--white-color);
+  margin: 0 auto;
+}
+
+.features-flex {
+  display: flex;
+}
+.features-flex .item {
+  width: calc((100% - 90px) / 4);
+}
+/*задаєм правий марджин для тексту, крім першого (бо перша вже не міє сестринської Item)*/
+.features-flex .item + .item {
+  margin-left: 30px;
+}
+
+.item-clock::before {
+  background-image: url(../img/features/clock.svg);
+  background-size: 70px;
+}
+
+/**/
+.features-item::before {
+  display: block;
+  content: "";
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-antenna::before {
+  background-image: url(../img/features/antenna.svg);
+  background-size: 70px;
+}
+
+.item-clock::before {
+  background-image: url(../img/features/clock.svg);
+  background-size: 70px;
+}
+
+.item-diagram::before {
+  background-image: url(../img/features/diagram.svg);
+  background-size: 70px;
+}
+
+.item-astronaut::before {
+  background-image: url(../img/features/astronaut.svg);
+  background-size: 70px;
+}
+
+.section-features .caption {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-transform: uppercase;
+  color: var(--main-text-color);
+  letter-spacing: 0.03em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.section-features .text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--secondary-text-color);
+  letter-spacing: 0.03em;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*=============   OUR WORK   ==============*/
+
+/*чим ми займаємось млдуль 3 вебінар 5 34 хвилина*/
+
+/*видалити і переписати, для тега h2 дати інший клас!!!*/
+
+/*це шо???*/
+.ourwork-img {
+  display: block;
+}
+
+.section-ourwork {
+  display: flex;
+  margin-top: 0px;
+  padding-bottom: 94px;
+  margin: 0 auto;
+}
+
+.ourwork-flex {
+  display: flex;
+}
+/*задаєм правий марджин для фоточок, крім першої (бо перша вже не міє сестринської Item)*/
+.ourwork-item {
+  width: calc((100% - 2 * 30px) / 3);
+  margin-right: 30px;
+}
+.section-ourwork .headline {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  color: var(--primary-text-color);
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.167;
+  letter-spacing: 0.03em;
+}
+
+/*=============   OUR TEAM   ==============*/
+/* наша команда*/
+.section-ourteam {
+  background-color: var(--background-grey-color);
+  margin: 0 auto;
+  padding-bottom: 94px;
+  padding-top: 94px;
+}
+.ourteam-flex {
+  display: flex;
+}
+
+/*задаєм правий марджин для картинок, крім першої (бо перша вже не міє сестринської Item)*/
+.ourteam-flex .item {
+  width: calc((100% - 3 * 30px) / 3);
+  margin-right: 30px;
+}
+
+.section-ourteam .item {
+  width: 270px;
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.section-ourteam .caption {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.167;
+  text-align: center;
+  color: var(--main-text-color);
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+
+.section-ourteam .image {
+  margin-bottom: 30px;
+}
+
+.section-ourteam .subject {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.188;
+  color: var(--main-text-color);
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-ourteam .heading {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.188;
+  color: var(--secondary-text-color);
+  letter-spacing: 0.03em;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.container-social-list {
+  margin-bottom: 30px;
+}
+.social-list {
+  display: flex;
+}
+.social-list.list {
+  width: 206px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.social-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+}
+
+.social-list__svg {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+}
+
+.social-list__link:hover,
+.social-list__link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-list__link:hover .social-list__svg,
+.social-list__link:focus .social-list__svg {
+  fill: var(--white-color);
+}
+
+/*=============   regular-clients   ==============*/
+
+.regular-clients-section {
+  margin: 0 auto;
+  padding-bottom: 94px;
+  padding-top: 94px;
+}
+
+.regular-clients-section .caption {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.167;
+  text-align: center;
+  color: var(--main-text-color);
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+.regular-clients-flex.list {
+  display: flex;
+}
+
+.icon-regular {
+  box-sizing: border-box;
+  width: 170px;
+  margin: 0 auto;
+  fill: #afb1b8;
+}
+
+.clients-item {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+/* !!!  вище треба прописати мінусовий -15 margin  !!!*/
+.clients-item-list {
+  width: calc((100% - 5 * 30px) / 6);
+  margin-right: 30px;
+}
+
+.clients-item:hover .icon-regular {
+  fill: var(--accent-color);
+}
+.clients-item:hover {
+  color: var(--accent-color);
+  border-color: #2196f3;
+}
+
+.clients-item:focus .icon-regular {
+  fill: var(--accent-color);
+}
+.clients-item:focus {
+  color: var(--accent-color);
+  border-color: #2196f3;
+}
+
+/*=============   SVG   ==============*/
+
+/*=============   FOOTER   ==============*/
+
+/* footer підвал*/
+
+.footer {
+  display: block;
+  background-color: var(--main-footer-background-color);
+  align-content: center;
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.container-footer {
+  display: block;
+  display: flex;
+  box-sizing: border-box;
+  align-content: center;
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+}
+
+/**/
+
+/* Підвал сторінки логотип */
+
+.adress-footer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.webstudio-footer {
+  display: inline-block;
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--white-color);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+}
+.adress {
+  display: inline-block;
+  width: 231px;
+}
+
+.adress .white {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--white-color);
+  letter-spacing: 0.03em;
+}
+
+.adress p + p {
+  margin-top: 8px;
+}
+
+.adress a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.footer-social-list {
+  display: block;
+  align-content: center;
+  margin-top: 15px;
+
+  margin-left: 70px;
+}
+
+.footer-social-list h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-bottom: 20px;
+}
+
+.footer-social-list.list {
+  display: flex;
+  width: 206px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.footer-social-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer-social-list__svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white-color);
+}
+.link-social-accent {
+  background: var(--accent-color);
+}
+
+/*=====================    Портфоліо    =====================*/
+/*=====================    Портфоліо    =====================*/
+.portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.button-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.button-menu {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.625;
+  text-align: center;
+  color: var(--main-text-color);
+  border: none;
+  background-color: var(--background-grey-color);
+  border-radius: 4px;
+  padding: 6px 22px;
+}
+
+/*задаєм правий марджин для кнопок, крім першої (бо перша вже не міє сестринської Item)*/
+.button-container .item + .item {
+  margin-left: 8px;
+}
+
+.button-menu:hover {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*  калькулятор  */
+/*.team-item{
+  width: calc((100% - 2 * 30px)/ 3);
+*/
+
+/* секція робіт з картинками*/
+.project-item {
+  width: calc((100% - 2 * 30px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.project-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.project-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/*забираємо правий марджин в кожного третього елемента*/
+.visually-container .project-item:nth-child(3n) {
+  margin-right: 0px;
+}
+
+/*забираємо нижній марджин в останніх трьох елементів*/
+.visually-container .project-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+.visually-container .image {
+  display: block;
+}
+.visually-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* !!!!!!!!!!!!!!!!!!!! ось тут шукаю помилку! */
+.visually-container .item {
+  display: inline-block;
+  flex-wrap: wrap;
+  line-height: 0;
+  box-sizing: border-box;
+  /*помилка з -2 */
+
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.stitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--main-text-color);
+  margin-bottom: 4px;
+  margin: 0px 24px 0px;
+}
+
+.ptitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87;
+  color: var(--secondary-text-color);
+  letter-spacing: 0.03em;
+  margin: 0px 24px 0px;
+  margin-bottom: 20px;
+}
