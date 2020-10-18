@@ -58,13 +58,14 @@ body {
   background-color: var(--white-color);
   font-family: Roboto, sans-serif;
   margin: 0 auto;
+  border-bottom: 1px solid #ececec;
 }
 
 .header-nav {
   display: flex;
   align-items: center;
   /* Установит стили нинжней рамки */
-  border-bottom: 1px solid #ececec;
+
   /*justify-content: space-between;*/
 }
 
@@ -90,16 +91,64 @@ body {
   padding-top: 24px;
   padding-bottom: 25px;
 }
-
 .logo {
   color: var(--accent-color);
 }
 
 /*ставимо вертикальні блоки в горизонтальну (лінію) (наші ссилки))*/
+
+.nav-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent-color);
+}
+
+/* робимо анімацію для кнопки*/
 .nav-site {
   display: flex;
-  align-self: center;
+  width: 294px;
+  position: relative;
+  outline: 3px solid rgb(45, 231, 231);
 }
+
+.nav-site .link-curent {
+  color: var(--accent-color);
+}
+
+.nav-link {
+  display: block;
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+/*  position: absolute;*/
+
+.nav-link::after {
+}
+
+.nav-link:hover::after {
+  transform: translateZ(0%);
+}
+
+.nav-site .item + .item {
+  margin-left: 50px;
+}
+/*
+  bottom: 100%;
+  right: 50%;
+  width: 100%;
+  height: 4px;
+
+*/
 
 /*  ======вирівнюєм нашу навігацію разом із марджином, 
 і забираємо марджин в останнього
@@ -110,30 +159,9 @@ body {
 нижче така сама команда (old shcool)
 */
 /*задаєм лівий марджин для списку ссилок, крім першої (бо перша вже не міє сестринської Item)*/
-.nav-site .item + .item {
-  margin-left: 50px;
-}
-
-/*робимо мейл і тел блочним*/
-.nav-site .link {
-  display: block;
-  color: var(--black-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.143;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-}
-.link:hover,
-.link:focus {
-  color: var(--accent-color);
-}
-
-.nav-site .link-curent {
-  color: var(--accent-color);
-}
 
 /* !!!!!!        Авторизація сайту       !!!!!!!*/
+/*робимо мейл і тел блочним*/
 
 /*задаєм лівий марджин для списку пошти і тел, крім першої (бо перша вже не міє сестринської Item)*/
 
