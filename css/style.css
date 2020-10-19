@@ -325,6 +325,12 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.hero-content .button:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: var(--accent-color);
+}
 /* Секція особливості*/
 /*=============   FEATURES   ==============*/
 /*переводим вертикальний список в горизонтальний */
@@ -939,12 +945,12 @@ body {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop .is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.backdrop .backdrop .is-hidden .modal {
+.backdrop.backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
