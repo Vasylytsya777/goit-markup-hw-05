@@ -104,12 +104,9 @@ body {
 }
 
 /*ставимо вертикальні блоки в горизонтальну (лінію) (наші ссилки))*/
-/*  !!!!!!!!!!!! Тест !!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*  !!!!!!!!!!!! Тест !!!!!!!!!!!!!!!!!!!!!!!!!*/
 
-/*  !!!!!!!!!!!! Тест !!!!!!!!!!!!!!!!!!!!!!!!!*/
-/*  !!!!!!!!!!!! Тест !!!!!!!!!!!!!!!!!!!!!!!!!*/
 .nav-link {
+  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -125,11 +122,43 @@ body {
   display: flex;
   width: 294px;
   position: relative;
-  outline: 3px solid rgb(45, 231, 231);
 }
 
+.nav-site .nav-link,
 .nav-site .link-curent {
   color: var(--accent-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-site .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  transform: translateY(4px);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-site .link-curent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  transform: translateY(-1px);
+}
+
+.nav-site .nav-link:hover::after,
+.nav-site .nav-link:focus::after {
+  transform: translateY(-1px);
 }
 
 .nav-link {
@@ -141,15 +170,6 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   position: relative;
-}
-
-/*  position: absolute;*/
-
-.nav-link::after {
-}
-
-.nav-link:hover::after {
-  transform: translateZ(0%);
 }
 
 .nav-site .item + .item {
@@ -211,21 +231,25 @@ body {
 .auth-item:hover .icon-auth {
   color: var(--accent-color);
   fill: var(--accent-color);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-item:hover .mail,
 .auth-item:hover .tel {
   color: var(--accent-color);
   fill: var(--accent-color);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:focus,
 .tel:focus {
   color: var(--accent-color);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:focus .icon-auth,
 .tel:focus .icon-auth {
   fill: var(--accent-color);
+  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*скриваємо заголовок*/
@@ -242,24 +266,6 @@ body {
   height: 1px;
   margin: -1px;
   overflow: hidden;
-}
-*/
-/*
-   виставляння розміру svg
-.mail::before {
-  display: inline-block;
-  content: url("/img/svg/envelope.svg");
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-}
-
-.tel::before {
-  display: inline-block;
-  content: url("/img/svg/smartphone.svg");
-  width: 10px;
-  height: 16px;
-  margin-right: 10px;
 }
 */
 
@@ -595,6 +601,7 @@ body {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* !!!  вище треба прописати мінусовий -15 margin  !!!*/
 .clients-item-list {
@@ -729,6 +736,7 @@ body {
   height: 44px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-list__svg {
@@ -906,5 +914,82 @@ body {
   color: #ffffff;
 }
 
-/* ======================= HOVER FOR IMAGE ====================*/
-/* ======================= HOVER FOR IMAGE ====================*/
+/* ======================= Модальне вікно ====================*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: all 1000ms linear;
+  z-index: 1000;
+   transition: transform 250ms var(--transition-timing-function);
+
+}
+
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.modal {
+  min-width: 528px;
+  min-height: 581px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform 250ms var(--transition-timing-function);
+}
+
+.modal .close-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+ position: absolute;
+  top: 8px;
+  right: 8px;
+  transition: background-color 250ms var(--transition-timing-function);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal .close-modal:hover{
+   cursor: pointer;
+  background-color: var(--accent-color);
+}
+
+.close-modal svg {    
+  width: 18px;
+  height: 18px;
+}
+/* =======================  Модальне вікно ====================*/
+
+
+
+
+close-modal    cls-btn svg
