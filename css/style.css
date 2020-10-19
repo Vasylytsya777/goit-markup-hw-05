@@ -41,6 +41,8 @@
 
 body {
   font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-size: 14px;
   background-color: var(--white-color);
   letter-spacing: 0.03em;
 }
@@ -64,7 +66,6 @@ body {
 /*ставимо вертикальні блоки в горизонт (лінію) і центруємо її*/
 .header {
   background-color: var(--white-color);
-  font-family: Roboto, sans-serif;
   margin: 0 auto;
   border-bottom: 1px solid #ececec;
 }
@@ -141,7 +142,7 @@ body {
   background-color: var(--accent-color);
   border-radius: 2px;
   transform: translateY(4px);
-  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-site .link-curent::after {
@@ -231,25 +232,25 @@ body {
 .auth-item:hover .icon-auth {
   color: var(--accent-color);
   fill: var(--accent-color);
-  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-item:hover .mail,
 .auth-item:hover .tel {
   color: var(--accent-color);
   fill: var(--accent-color);
-  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:focus,
 .tel:focus {
   color: var(--accent-color);
-  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail:focus .icon-auth,
 .tel:focus .icon-auth {
   fill: var(--accent-color);
-  transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*скриваємо заголовок*/
@@ -308,6 +309,7 @@ body {
 .button {
   /* font-family: inherit; */
   display: inline-block;
+  border: none;
   border-radius: 4px;
   padding: 10px 32px;
   min-width: 200px;
@@ -321,6 +323,7 @@ body {
   letter-spacing: 0.06em;
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Секція особливості*/
 /*=============   FEATURES   ==============*/
@@ -557,11 +560,13 @@ body {
 .social-list__link:hover,
 .social-list__link:focus {
   background-color: var(--accent-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list__link:hover .social-list__svg,
 .social-list__link:focus .social-list__svg {
   fill: var(--white-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*=============   regular-clients   ==============*/
@@ -601,7 +606,6 @@ body {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* !!!  вище треба прописати мінусовий -15 margin  !!!*/
 .clients-item-list {
@@ -611,18 +615,22 @@ body {
 
 .clients-item:hover .icon-regular {
   fill: var(--accent-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-item:hover {
   color: var(--accent-color);
   border-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item:focus .icon-regular {
   fill: var(--accent-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-item:focus {
   color: var(--accent-color);
   border-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*=============   SVG   ==============*/
@@ -736,7 +744,6 @@ body {
   height: 44px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-list__svg {
@@ -747,6 +754,7 @@ body {
 .link-social:hover,
 .link-social:focus {
   background: var(--accent-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*=====================    Портфоліо    =====================*/
@@ -789,6 +797,7 @@ body {
   color: var(--white-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*  калькулятор  */
@@ -812,7 +821,8 @@ body {
   border-bottom: 1px solid #eeeeee;
 }
 
-.project-item:hover {
+.project-item:hover,
+.project-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -888,6 +898,7 @@ body {
 .project-link:hover .project-block,
 .project-link:focus .project-block {
   transform: translateY(0%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-block {
@@ -924,22 +935,18 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: all 1000ms linear;
   z-index: 1000;
-   transition: transform 250ms var(--transition-timing-function);
-
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-.backdrop.is-hidden {
+.backdrop .is-hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.backdrop.backdrop.is-hidden .modal {
+.backdrop .backdrop .is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.1);
 }
-
 
 .modal {
   min-width: 528px;
@@ -953,7 +960,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scaleY(1);
-  transition: transform 250ms var(--transition-timing-function);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal .close-modal {
@@ -966,10 +973,10 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
- position: absolute;
+  position: absolute;
   top: 8px;
   right: 8px;
-  transition: background-color 250ms var(--transition-timing-function);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
@@ -978,18 +985,13 @@ body {
   pointer-events: none;
 }
 
-.modal .close-modal:hover{
-   cursor: pointer;
+.modal .close-modal:hover {
+  cursor: pointer;
   background-color: var(--accent-color);
 }
 
-.close-modal svg {    
+.close-modal svg {
   width: 18px;
   height: 18px;
 }
 /* =======================  Модальне вікно ====================*/
-
-
-
-
-close-modal    cls-btn svg
