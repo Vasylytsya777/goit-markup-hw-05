@@ -277,6 +277,9 @@ body {
 /*=============   HERO   ==============*/
 /*Секція герой */
 .section-hero {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--main-footer-background-color);
   text-align: center;
   padding-top: 200px;
@@ -286,8 +289,9 @@ body {
       rgba(47, 48, 58, 0.4)
     ),
     url("../img/herobg/herobg.jpg");
-  background-repeat: no-repeat;
+
   background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
